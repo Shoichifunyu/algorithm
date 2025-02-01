@@ -1,4 +1,4 @@
-from __future__ import annnotations
+from __future__ import annotations
 from typing import List, Callable, TypeVar, Tuple
 from functools import reduce
 from layer import Layer
