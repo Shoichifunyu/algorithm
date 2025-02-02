@@ -10,7 +10,7 @@ class Network:
     def __init__(self, layer_structure: List[int], learning_rate: float, activation_function: Callable[[float], float] = sigmoid, derivative_activation_function: Callable[[float], float] = derivative_sigmoid) -> None:
         if len(layer_structure) < 3:
             raise ValueError("Error: Should be at least 3 layers (1 input, 1 hidden, 1 output)")
-        self.layers: List[layer] = []
+        self.layers: List[Layer] = []
         # 入力層
         input_layer: Layer = Layer(None, layer_structure[0], learning_rate, activation_function, derivative_activation_function)
         self.layers.append(input_layer)
