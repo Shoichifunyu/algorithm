@@ -26,6 +26,7 @@ class Network:
     def backpropagate(self, expected: List[float]) -> None:
         # 出力層ニューロンのデルタ計算
         last_layer: int = len(self.layers) - 1
+        self.layers[last_layer].calculate_deltas_for_output_layer(expected)
         for l in range(last_layer - 1, 0, -1):
             self.layers[last_layer].calculate_deltas_for_hidden_layer(self.layers[l + 1])
 
